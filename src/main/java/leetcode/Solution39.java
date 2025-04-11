@@ -5,22 +5,11 @@ import java.util.List;
 
 public class Solution39 {
 
+    //todo
     public static int[][] getCombinationSum(int[] arr, int target){
         List<int[]> result = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j <= target; j++) {
-                int count = 1;
-                while(arr[i] * count <= target){
-                    if(arr[i]*count == target){
-                        int[] tempResult = new int[count];
-                        for (int k = 0; k < count; k++) {
-                            tempResult[k] = arr[i];
-                        }
-                        result.add(tempResult);
-                    }
-                    count++;
-                }
-            }
+            int[] tempResult = new int[arr.length];
         }
         return result.toArray(new int[][] {});
     }
