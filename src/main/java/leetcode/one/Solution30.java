@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.one;
 
 public class Solution30 {
 

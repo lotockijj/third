@@ -1,8 +1,6 @@
-package leetcode;
+package leetcode.one;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class Solution39Test {
 
