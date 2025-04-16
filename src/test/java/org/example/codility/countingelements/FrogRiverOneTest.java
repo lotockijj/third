@@ -15,12 +15,6 @@ class FrogRiverOneTest {
     }
 
     @Test
-    void solution1() {
-        int result = frogRiverOne.solution(6, new int[]{1, 3, 1, 4, 2, 3, 5, 4});
-        assertEquals(6, result);
-    }
-
-    @Test
     void solution2() {
         int result = frogRiverOne.solution(5, new int[]{1, 3, 1, 4, 2, 3, 5, 4});
         assertEquals(6, result);

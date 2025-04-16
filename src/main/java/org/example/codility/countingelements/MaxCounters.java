@@ -2,6 +2,7 @@ package org.example.codility.countingelements;
 
 public class MaxCounters {
 
+    //todo
     public int[] solution(int N, int[] A) {
         int[] result = new int[N];
         int max = 0;
@@ -9,14 +10,19 @@ public class MaxCounters {
         boolean maxUpdated = false;
         for (int i = 0; i < A.length; i++) { //3, 4, 4, 6, 1, 4, 4 :=> result 3, 2, 2, 4, 2
             if(A[i] < N){
-                result[A[i] - 1] = result[A[i] - 1] + 1;
-                max = Math.max(result[A[i] - 1], max);
+                if(maxUpdated){
+                    result[A[i] - 1] = max + 1;
+                } else {
+                    result[A[i] - 1] = result[A[i] - 1] + 1;
+                }
+                tempMax = Math.max(result[A[i] - 1], tempMax);
             } else {
-                maxCounter(result, max);
+                maxUpdated = true;
+                max = Math.max(tempMax, max);
             }
-            print(result, max);
+            print(result, tempMax);
         }
-        //maxCounter(result, max);
+        maxCounter(result, max);
         return result;
     }
 

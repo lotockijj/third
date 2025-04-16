@@ -15,8 +15,29 @@ class PermMissingElemTest {
     }
 
     @Test
-    void solution() {
+    void solution1() {
         int result = permMissingElem.solution(new int[]{2, 3, 1, 5});
+
+        assertEquals(4, result);
+    }
+
+    @Test
+    void solution2() {
+        int result = permMissingElem.solution(new int[]{1, 3, 6, 4, 1, 2});
+
+        assertEquals(5, result);
+    }
+
+    @Test
+    void solution3() {
+        int result = permMissingElem.solution(new int[]{-1, -3});
+
+        assertEquals(1, result);
+    }
+
+    @Test
+    void solution4() {
+        int result = permMissingElem.solution(new int[]{1, 2, 3});
 
         assertEquals(4, result);
     }
