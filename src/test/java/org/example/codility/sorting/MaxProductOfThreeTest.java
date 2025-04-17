@@ -15,12 +15,21 @@ class MaxProductOfThreeTest {
     }
 
     @Test
-    void solution() {
+    void solution1() {
         int[] A = new int[]{-3, 1, 2, -2, 5, 6};
 
         int result = maxProductOfThree.solution(A);
 
         assertEquals(60, result);
+    }
+
+    @Test
+    void solution2() {
+        int[] A = new int[]{-2, -10, -4};
+
+        int result = maxProductOfThree.solution(A);
+
+        assertEquals(80, result);
     }
 }
 
