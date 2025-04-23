@@ -148,7 +148,9 @@ class FishTest {
     void solutionFails() {
         int[] A = {4, 3, 2, 1, 5};  // Fish sizes
         int[] B = {1, 0, 1, 0, 0};  // Directions (1: downstream, 0: upstream)
+
         int result = fish.solution(A, B);
+
         assertEquals(1, result);  // Your solution returns 3, but correct answer is 2
     }
 }

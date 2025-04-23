@@ -22,13 +22,12 @@
     </properties>
 
     <dependencies>
-<!--        <dependency><artifactId>spring-boot-dependencies</artifactId>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-dependencies</artifactId>-->
-<!--            <version>3.4.4</version>-->
-<!--            <type>pom</type>-->
-<!--            <scope>import</scope>-->
-<!--        </dependency>-->
+        <dependency><artifactId>spring-boot-dependencies</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <version>3.4.4</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
