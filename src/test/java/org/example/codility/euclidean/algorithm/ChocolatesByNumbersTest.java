@@ -3,6 +3,8 @@ package org.example.codility.euclidean.algorithm;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Date;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ChocolatesByNumbersTest {
@@ -32,7 +34,7 @@ class ChocolatesByNumbersTest {
     void solution3() {
         int result = chocolatesByNumbers.solution(67, 17);
 
-        assertEquals(67, result);
+        assertEquals(36, result);
     }
 
     @Test
@@ -47,6 +49,31 @@ class ChocolatesByNumbersTest {
         int result = chocolatesByNumbers.solution(3, 2);
 
         assertEquals(3, result);
+    }
+
+    @Test
+    void solution6() {
+        int result = chocolatesByNumbers.solution(4, 3);
+
+        assertEquals(4, result);
+    }
+
+    @Test
+    void solution7() {
+        int result = chocolatesByNumbers.solution(1, 3);
+
+        assertEquals(1, result);
+    }
+
+    @Test //0.000332326 seconds !
+    void solution8() {
+        long startTime = System.nanoTime();
+
+        int result = chocolatesByNumbers.solution(Integer.MAX_VALUE, 101);
+
+        System.out.println(System.nanoTime() - startTime);
+
+        assertEquals(21262348, result);
     }
 }
 

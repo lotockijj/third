@@ -5,8 +5,21 @@ import java.util.Set;
 
 public class ChocolatesByNumbers {
 
-    //1,2,3,4,5,6,7,8,9,10,
+    // todo 37 %
     public int solution(int N, int M) {
+        // Implement your solution here
+        int result = 0;
+        int remainder0fDivision = N % M;
+        if(remainder0fDivision == 0){
+            return N/M;
+        } else {
+            int partResult = M > N ? partSolution(N, M) : partSolution(remainder0fDivision + M, M);
+            result = N/M > 1 ? N/M + partResult : partResult;
+        }
+        return result;
+    }
+
+    private int partSolution(int N, int M) {
         Set<Integer> alreadyEaten = new HashSet<>();
         int current = 0;
         for (int i = 1; i <= N; i++) {
