@@ -7,18 +7,6 @@ public class ChocolatesByNumbers {
 
     //1,2,3,4,5,6,7,8,9,10,
     public int solution(int N, int M) {
-        int result = 0;
-        int remainder0fDivision = N % M;
-        if(remainder0fDivision == 0){
-            return N/M;
-        } else {
-            int partResult = partSolution(remainder0fDivision + M, M);
-            result = N/M + partResult;
-        }
-        return result;
-    }
-
-    private int partSolution(int N, int M) {
         Set<Integer> alreadyEaten = new HashSet<>();
         int current = 0;
         for (int i = 1; i <= N; i++) {
@@ -32,7 +20,7 @@ public class ChocolatesByNumbers {
                 i = 0;
             }
         }
-        return N - alreadyEaten.size();
+        return alreadyEaten.size();
     }
 }
 

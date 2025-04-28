@@ -30,9 +30,9 @@ class ChocolatesByNumbersTest {
 
     @Test
     void solution3() {
-        int result = chocolatesByNumbers.solution(17, 68);
+        int result = chocolatesByNumbers.solution(67, 17);
 
-        assertEquals(3, result);
+        assertEquals(67, result);
     }
 
     @Test
@@ -40,6 +40,13 @@ class ChocolatesByNumbersTest {
         int result = chocolatesByNumbers.solution(24, 18);
 
         assertEquals(4, result);
+    }
+
+    @Test
+    void solution5() {
+        int result = chocolatesByNumbers.solution(3, 2);
+
+        assertEquals(3, result);
     }
 }
 
