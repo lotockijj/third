@@ -43,6 +43,16 @@ class CommonPrimeDivisorsTest {
 
         assertEquals(3, result);
     }
+
+    @Test
+    void solution4() {
+        int[] A = {20};
+        int[] B = {100};
+
+        int result = commonPrimeDivisors.solution(A, B);
+
+        assertEquals(1, result);
+    }
 }
 
 /*
