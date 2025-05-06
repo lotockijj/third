@@ -15,7 +15,7 @@ class MaxNonoverlappingSegmentsTest {
     }
 
     @Test
-    void solution() {
+    void solution1() {
         int[] A = {1,3,7,9,9};
         int[] B = {5,6,8,9,10};
 
@@ -23,4 +23,16 @@ class MaxNonoverlappingSegmentsTest {
 
         assertEquals(3, result);
     }
+
+    @Test
+    void solution2() {
+        int[] A = {1,5,7,9,9};
+        int[] B = {4,6,8,9,10};
+
+        int result = maxNonoverlappingSegments.solution(A, B);
+
+        assertEquals(4, result);
+    }
+
+
 }
