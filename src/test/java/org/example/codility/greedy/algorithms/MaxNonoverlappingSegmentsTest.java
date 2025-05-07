@@ -34,5 +34,15 @@ class MaxNonoverlappingSegmentsTest {
         assertEquals(4, result);
     }
 
+    @Test
+    void solution3() {
+        int[] A = {};
+        int[] B = {};
+
+        int result = maxNonoverlappingSegments.solution(A, B);
+
+        assertEquals(0, result);
+    }
+
 
 }
