@@ -43,10 +43,19 @@ class FirstUniqueTest {
 
     @Test
     void solution4() {
-        int[] a = {1,2,2,2,1,1};
+        int[] a = {1,2,2,2,1,1,1,1,2,2};
 
         int result = firstUnique.solution(a);
 
         assertEquals(1, result);
+    }
+
+    @Test
+    void solution5() {
+        int[] a = {0,8,0};
+
+        int result = firstUnique.solution(a);
+
+        assertEquals(8, result);
     }
 }
