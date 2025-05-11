@@ -1,4 +1,4 @@
-package org.example.codilitty;
+package org.example.codilitty.algorithmic.skills;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
