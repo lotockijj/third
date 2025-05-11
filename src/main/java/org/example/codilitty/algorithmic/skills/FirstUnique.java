@@ -1,4 +1,4 @@
-package org.example.codilitty;
+package org.example.codilitty.algorithmic.skills;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
