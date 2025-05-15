@@ -1,5 +1,7 @@
 package common.threads;
 
+//From https://www.baeldung.com/java-wait-notify
+
 public class Data {
     private String packet;
 
