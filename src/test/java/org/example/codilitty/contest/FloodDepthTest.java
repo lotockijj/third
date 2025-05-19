@@ -34,10 +34,28 @@ class FloodDepthTest {
 
     @Test
     void solution3() {
-        int[] A = {1,3,2,1,2,1,5,3,1,4,2};
+        int[] A = {1,3,2,1,5,3,1,4,2};
 
         int result = floodDepth.solution(A);
 
         assertEquals(3, result);
+    }
+
+    @Test
+    void solution4() {
+        int[] A = {3,1,2};
+
+        int result = floodDepth.solution(A);
+
+        assertEquals(1, result);
+    }
+
+    @Test
+    void solution5() {
+        int[] A = {2,1,3};
+
+        int result = floodDepth.solution(A);
+
+        assertEquals(1, result);
     }
 }
