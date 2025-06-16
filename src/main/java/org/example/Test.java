@@ -1,8 +1,8 @@
 package org.example;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.StringJoiner;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Test {
 
@@ -42,8 +42,31 @@ public class Test {
                 joiner.add(String.valueOf(i)).add("\n");
             }
         }
-        System.out.println(stringBuilder);
+        //System.out.println(stringBuilder);
         //System.out.println(joiner);
+        Map<String, Integer> nameMap = new HashMap<>();
+        Integer value = nameMap.computeIfAbsent("John", String::length);
+        System.out.println(value);
+        nameMap.put("John", 100);
+        //System.out.println(nameMap.computeIfAbsent("John", String::length));
+
+        Function<Integer, String> intToString = Object::toString;
+        Function<String, String> quote = s -> "'" + s + "'";
+        Function<Integer, String> quoteIntToString = quote.compose(intToString);
+        //System.out.println("'5'".equals(quoteIntToString.apply(5)));
+        Map<Integer, Integer> sortedMap = new TreeMap<>();
+        sortedMap.put(3, 1);
+        sortedMap.put(1, 3);
+        sortedMap.put(2, 2);
+        sortedMap.put(100, 10);
+        sortedMap.put(10, 100);
+        //sortedMap.forEach((k, v) -> System.out.println(k + " " + v));
+        String sentence = "LoopMe was the best experience for now !";
+        List<String> sortedLetters = Arrays.stream(sentence.split(" "))
+                .filter(s -> !s.isBlank())
+                .sorted(Comparator.comparing(String::length))
+                .toList();
+        System.out.println(sortedLetters.get(sortedLetters.size() - 1));
     }
 
 }
