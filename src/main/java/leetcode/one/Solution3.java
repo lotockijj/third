@@ -1,5 +1,8 @@
 package leetcode.one;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Solution3 {
     public static void main(String[] args) {
         String example = "abcabcbb";
@@ -8,6 +11,27 @@ public class Solution3 {
         function(example);
         function(example2);
         function(example3);
+        function2(example);
+        function2(example2);
+        function2(example3);
+    }
+
+    private static void function2(String example){
+        Set<Character> alreadyPresentLetters = new HashSet<>();
+        int result = 0;
+        int tempResult = 0;
+        for (int i = 0; i < example.length(); i++) {
+            char current = example.charAt(i);
+            if(alreadyPresentLetters.add(current)){
+                tempResult++;
+            } else {
+                result = Math.max(result, tempResult);
+                alreadyPresentLetters.clear();
+                tempResult = 0;
+            }
+            result = Math.max(result, tempResult);
+        }
+        System.out.println(result);
     }
 
     private static void function(String example) {
