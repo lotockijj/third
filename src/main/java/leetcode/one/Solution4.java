@@ -9,14 +9,38 @@ public class Solution4 {
     }
 
     private static void function(int[] num1, int[] num2) {
-        double sum = 0;
-        for (int i = 0; i < num1.length; i++) {
-            sum += num1[i];
+        int[] addArrays = new int[num1.length + num2.length];
+        int indexOfNum1 = 0;
+        int indexOfNum2 = 0;
+        for (int i = 0; i < addArrays.length; i++) {
+            if(indexOfNum1 < num1.length && indexOfNum2 < num2.length){
+                if(num1[indexOfNum1] > num2[indexOfNum2]){
+                    addArrays[i] = num2[indexOfNum2];
+                    indexOfNum2++;
+                } else {
+                    addArrays[i] = num1[indexOfNum1];
+                    indexOfNum1++;
+                }
+            } else if(indexOfNum1 < num1.length){
+                addArrays[i] = num1[indexOfNum1];
+                indexOfNum1++;
+            } else if(indexOfNum2 < num2.length){
+                addArrays[i] = num2[indexOfNum2];
+                indexOfNum2++;
+            }
         }
-        for (int i = 0; i < num2.length; i++) {
-            sum += num2[i];
+        double result = 0;
+        int mid = addArrays.length/2;
+        if(addArrays.length == 0){
+            result = 0.0;
+        } else if (addArrays.length == 1){
+            result = addArrays[0];
+        } else if(mid %2 == 0){
+            result = ((double) addArrays[mid - 1] + addArrays[mid])/2;
+        } else {
+            result = addArrays[mid];
         }
-        System.out.printf("%.4f",sum/(num1.length + num2.length));
+        System.out.printf("%.4f",result);
         System.out.println();
     }
 }
