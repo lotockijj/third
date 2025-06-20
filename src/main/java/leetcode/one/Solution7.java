@@ -1,16 +1,10 @@
 package leetcode.one;
 
 public class Solution7 {
-    public static void main(String[] args) {
-        System.out.println(function7(321));
-        System.out.println(function7(-321));
-        System.out.println(function7(120));
-        System.out.println(function7(0));
-    }
 
-    private static int function7(int number) {
-        if(number == 0) return 0;
-        String s = String.valueOf(number);
+    public int function(long x) {
+        if(x == 0) return 0;
+        String s = String.valueOf(x);
         StringBuilder stringBuilder = new StringBuilder();
         boolean isZero = true;
         if (s.charAt(0) == '-') {
@@ -18,7 +12,6 @@ public class Solution7 {
         }
         for (int i = s.length() - 1; i >= 0; i--) {
                 if (s.charAt(i) == '0' && isZero) {
-                    continue;
                 } else if(s.charAt(i) != '-') {
                     stringBuilder.append(s.charAt(i));
                     isZero = false;
