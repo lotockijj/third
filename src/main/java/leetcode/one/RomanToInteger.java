@@ -1,4 +1,4 @@
-package leetcode.one.corrections;
+package leetcode.one;
 
 import java.util.Map;
 

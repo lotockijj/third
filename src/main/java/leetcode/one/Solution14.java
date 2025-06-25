@@ -2,12 +2,13 @@ package leetcode.one;
 
 public class Solution14 {
 
-    public String getLongestCommonPrefix(String[] strings) {
+    public String getLongestCommonPrefix(String[] strs) {
+        if(strs.length == 1) return strs[0];
         StringBuilder result = new StringBuilder();
         boolean allMatch = false;
-        for (int i = 0; i < strings[0].length(); i++) {
-            for (int j = 1; j < strings.length; j++) {
-                if(strings[j].length() > i && strings[0].charAt(i) == strings[j].charAt(i)){
+        for (int i = 0; i < strs[0].length(); i++) {
+            for (int j = 1; j < strs.length; j++) {
+                if(strs[j].length() > i && strs[0].charAt(i) == strs[j].charAt(i)){
                     allMatch = true;
                 } else {
                     allMatch = false;
@@ -15,7 +16,9 @@ public class Solution14 {
                 }
             }
             if(allMatch){
-                result.append(strings[0].charAt(i));
+                result.append(strs[0].charAt(i));
+            } else {
+                break;
             }
         }
         return result.toString();
