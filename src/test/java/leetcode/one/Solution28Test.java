@@ -30,4 +30,9 @@ class Solution28Test {
     void strStr5() {
         assertEquals(-1, Solution28.strStr("",""));
     }
+
+    @Test
+    void strStr6() {
+        assertEquals(0, Solution28.strStr("sadbutsad","sad"));
+    }
 }

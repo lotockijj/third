@@ -19,6 +19,7 @@ public class Solution28 {
                 }
                 if(allMatch){
                     res = i;
+                    break;
                 }
             }
         }
