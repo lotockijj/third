@@ -4,18 +4,16 @@ import leetcode.asked.ListNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-class KSortedListsTest {
+class KSortedLists23Test {
 
-    private KSortedLists kSortedLists;
+    private KSortedLists23 kSortedLists;
 
     @BeforeEach
     void setUp() {
-        kSortedLists = new KSortedLists();
+        kSortedLists = new KSortedLists23();
     }
 
     @Test
