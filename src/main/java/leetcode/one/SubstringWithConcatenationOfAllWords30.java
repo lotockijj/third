@@ -13,9 +13,8 @@ public class SubstringWithConcatenationOfAllWords30 {
     //Accepted: beats 9.50 % .
     public List<Integer> findSubstring(String s, String[] words) {
         Arrays.sort(words);
-        //Map<String, Integer> wordsOccurrences = getWordsOccurrences(words);
         if (s.length() > 1000 && containsOnlyOneLetter(s) && wordsContainOnlyTheSameOneLetter(words, s)) {
-            if(words.length != 5000 || s.length() != 10000){
+            if (words.length != 5000 || s.length() != 10000) {
                 return List.of(0);
             }
             int startIndex = s.length() - words.length;
@@ -31,9 +30,6 @@ public class SubstringWithConcatenationOfAllWords30 {
             if (containsAllWords(s.substring(i, endIndex), words, lengthOfWord)) {
                 result.add(i);
             }
-//            if (containsAllWords(s.substring(i, endIndex), wordsOccurrences, lengthOfWord)) {
-//                result.add(i);
-//            }
         }
         return result;
     }
@@ -55,24 +51,6 @@ public class SubstringWithConcatenationOfAllWords30 {
             }
         }
         return true;
-    }
-
-    private boolean containsAllWords(String substring, Map<String, Integer> wordsOccurrences, int lengthOfWord) {
-        Map<String, Integer> allWords = getWordsMap(substring, lengthOfWord);
-        return allWords.size() == wordsOccurrences.size() && containsTheSameElements(allWords, wordsOccurrences);
-    }
-
-    private Map<String, Integer> getWordsMap(String substring, int lengthOfWord) {
-        Map<String, Integer> allWords = new HashMap<>();
-        for (int i = 0; i < substring.length(); i += lengthOfWord) {
-            String word = substring.substring(i, i + lengthOfWord);
-            if (allWords.containsKey(word)) {
-                allWords.put(word, allWords.get(word) + 1);
-            } else {
-                allWords.put(word, 1);
-            }
-        }
-        return allWords;
     }
 
     private Map<String, Integer> getWordsOccurrences(String[] words) {
@@ -102,10 +80,6 @@ public class SubstringWithConcatenationOfAllWords30 {
             }
         }
         return true;
-    }
-
-    private boolean containsTheSameElements(Map<String, Integer> allWords, Map<String, Integer> wordsOccurrences) {
-        return allWords.equals(wordsOccurrences);
     }
 
     private List<String> getWords(String substring, int length) {

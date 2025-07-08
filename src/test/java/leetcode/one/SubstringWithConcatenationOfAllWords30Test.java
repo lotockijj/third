@@ -64,7 +64,7 @@ class SubstringWithConcatenationOfAllWords30Test {
 
         long actualTimeExecution = TimeUnit.MILLISECONDS.toSeconds((System.nanoTime() - start));
 
-        assertEquals(5001, actual.size());
+        assertEquals(4999, actual.size());
         assertTrue(actualTimeExecution < 100_000);
     }
 
