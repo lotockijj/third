@@ -2,28 +2,9 @@ package leetcode.one;
 
 public class Solution28 {
 
-    public static int strStr(String haystack, String needle){
-        int res = -1;
-        if(!haystack.contains(needle)){
-            return -1;
-        } else {
-            for (int i = 0; i < haystack.length(); i++) {
-                int j = 0;
-                boolean allMatch = true;
-                while(j < needle.length()){
-                    if(haystack.charAt(i + j) != needle.charAt(j)){
-                        allMatch = false;
-                        break;
-                    }
-                    j++;
-                }
-                if(allMatch){
-                    res = i;
-                    break;
-                }
-            }
-        }
-        return res;
+    public static int strStr(String haystack, String needle) {
+        int result = haystack.indexOf(needle);
+        return result != 0 || !needle.isEmpty() ? result : -1;
     }
 }
 
