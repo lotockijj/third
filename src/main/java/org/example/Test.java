@@ -6,13 +6,11 @@ import java.util.Set;
 public class Test {
 
     public static void main(String[] args) {
-<<<<<<< HEAD
         printFibonacci();
         findAndPrintFactorial(5);
         swapAndPrintNumbers(3, 11);
         int[] arr = {10, 4, 8, 5, 2, 1, 1};
         bubleSortAndPrint(arr);
-=======
         int result = 0;
         Set<Integer> number = new HashSet<>();
         for(int i = 500; i <= 543; i++){
@@ -31,7 +29,6 @@ public class Test {
             }
         }
         System.out.println(number.size());
->>>>>>> 49206a4 (Codility: CountBoundedSlices 60% (100% correctness/20% performance).)
     }
 
     private static void bubleSortAndPrint(int[] arr) {
