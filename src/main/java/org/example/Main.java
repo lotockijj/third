@@ -15,7 +15,13 @@ public class Main {
         int[] prices = {1701, 1000, 1100, 2000, 1500, 1700, 1702};
         int[] prices1 = function(prices, 1700, 2);
         for (int i = 0; i < prices1.length; i++) {
-            System.out.print(prices1[i] + "  ");
+            //System.out.print(prices1[i] + "  ");
+        }
+        int[] arr = {18, 1, 3, 6, 7, -5};
+        for (int i = 1; i < arr.length - 1; i++) {
+            int first = arr[i - 1];
+            int second = arr[i];
+            int third = arr[i + 1];
         }
     }
 
