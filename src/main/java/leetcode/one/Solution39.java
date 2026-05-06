@@ -5,13 +5,31 @@ import java.util.List;
 
 public class Solution39 {
 
-    //todo
-    public static int[][] getCombinationSum(int[] arr, int target){
-        List<int[]> result = new ArrayList<>();
-        for (int i = 0; i < arr.length; i++) {
-            int[] tempResult = new int[arr.length];
+    public static List<List<Integer>> combinationSum(int[] arr, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+        backtrack(arr, target, 0, new ArrayList<>(), 0, result);
+        return result;
+    }
+
+    private static void backtrack(
+            int[] nums,
+            int target,
+            int index,
+            List<Integer> current,
+            int currentSum,
+            List<List<Integer>> result
+    ) {
+        if (currentSum == target) {
+            result.add(new ArrayList<>(current));
+            return;
         }
-        return result.toArray(new int[][] {});
+        if (currentSum > target || index == nums.length) {
+            return;
+        }
+        current.add(nums[index]);
+        backtrack(nums, target, index, current, currentSum + nums[index], result);
+        current.remove(current.size() - 1);
+        backtrack(nums, target, index + 1, current, currentSum, result);
     }
 }
 /*
