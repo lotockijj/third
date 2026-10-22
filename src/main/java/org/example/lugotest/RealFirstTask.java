@@ -74,4 +74,29 @@ public class RealFirstTask {
 
         return result;
     }
+
+    public int getMaxSumSubmatrix(int[][] matrix) {
+        int sum = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                sum = countBestSum(i, j, matrix, sum);
+            }
+        }
+
+        return sum;
+    }
+
+    private int countBestSum(int startRow, int startColumn, int[][] matrix, int sum) {
+        int tempSum = 0;
+        for (int startIndex = 1; startIndex < matrix.length; startIndex++) {
+            for (int i = startRow; i < startRow + startIndex && i < matrix.length; i++) {
+                for (int j = startColumn; j < startColumn + startIndex && j < matrix.length; j++) {
+                    tempSum += matrix[i][j];
+                }
+            }
+            sum = Math.max(sum, tempSum);
+            tempSum = 0;
+        }
+        return sum;
+    }
 }

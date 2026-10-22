@@ -1,6 +1,8 @@
 package leetcode.one;
 
 
+import leetcode.asked.ListNode;
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
@@ -20,7 +22,7 @@ public class Solution61 {
             temp = temp.next;
         }
         int len = k >= all.size() ? k % all.size() : k;
-        if(len == 0){
+        if (len == 0) {
             return head;
         }
         temp = head;
@@ -34,7 +36,7 @@ public class Solution61 {
         }
         ListNode first = nodes.getLast();
         ListNode last = nodes.getFirst();
-        if(end != null) {
+        if (end != null) {
             end.next = null;
         }
         last.next = head;
@@ -42,17 +44,46 @@ public class Solution61 {
         return first;
     }
 
+    // 4 -> 3 -> 2 -> 1
+    public ListNode reverseListNode(ListNode head) {
+        ListNode prev = null;
+        ListNode current = head;
+
+        while (current != null) {
+            ListNode next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+
+        return prev;
+    }
+
     public static void main(String[] args) {
         Solution61 solution61 = new Solution61();
         ListNode example = ListNode.getListOfNodes(1, 2);
         ListNode listNode = solution61.rotateRight(example, 2);
 
+        printListNode(listNode);
+
+        ListNode rotatedNode = ListNode.getListOfNodes(1, 2, 3, 4);
+        printListNode(rotatedNode);
+        ListNode listNode1 = solution61.reverseListNode(rotatedNode);
+        printListNode(listNode1);
+    }
+
+    private static void printListNode(ListNode listNode) {
+        boolean notEmpty = false;
         while (listNode != null) {
             System.out.print(listNode);
             listNode = listNode.next;
+            notEmpty = true;
         }
-
-
+        if (notEmpty) {
+            System.out.println();
+        } else {
+            System.out.println("EMPTY");
+        }
     }
 
     public static class ListNode {
