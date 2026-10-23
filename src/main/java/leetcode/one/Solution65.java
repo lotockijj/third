@@ -67,4 +67,16 @@ public class Solution65 {
         }
         return anyNumbersPresent;
     }
+
+    public boolean isNumber2(String s) {
+        if(s.contains("Infinity") || s.contains("f") || s.contains("D") || s.contains("d")){
+            return false;
+        }
+        try {
+            Double.valueOf(s);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        return true;
+    }
 }
